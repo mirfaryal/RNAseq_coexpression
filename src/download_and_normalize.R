@@ -1,45 +1,56 @@
 tic <- as.integer(as.POSIXct(Sys.time()))
+#numerical timestamp based on system time
+
 
 library("tidyverse")
 library("recount")
+#load packages required to run 
 #argument should be file made from recount2 metadata (see README)
 args <- commandArgs(TRUE)
+#pass command line arguments to R
 
-# make some dirs if they don't exist
-#####################################
+
+### Make Directories If They Do Not Exist ###
+
 dirname <- "./rse"
 if(!dir.exists(dirname)) {
   dir.create(dirname)
 }
+#create directory named rse if it does not exist 
 
 dirname <- "./counts"
 if(!dir.exists(dirname)) {
   dir.create(dirname)
 }
+#create directory named counts if it does not exist 
 
 dirname <- "./metadata"
 if(!dir.exists(dirname)) {
   dir.create(dirname)
 }
+#create directory named metadata if it does not exist 
 
 dirname <- "./rpkm"
 if(!dir.exists(dirname)) {
   dir.create(dirname)
 }
+#create directory named rpkm if it does not exist 
 
 dirname <- "./cpm"
 if(!dir.exists(dirname)) {
   dir.create(dirname)
 }
+#create directory named cpm if it does not exist 
 
 dirname <- "./tpm"
 if(!dir.exists(dirname)) {
   dir.create(dirname)
 }
+#create directory named tpm if it does not exist 
 
-# Functions for calulating counts, cpm, rpkm, and tpm from recount2 rse
-########################################################################
 
+### Functions to Calculate Counts, CPM, RPKM, and TPM from recount2 rse ###
+#BOOKMARK#
 #Get counts data_frame from recount2 rse
 get_counts <- function(rse){
   libtype_factor <- rep(1, length(colData(rse)$paired_end))
