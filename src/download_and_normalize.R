@@ -5,9 +5,9 @@ tic <- as.integer(as.POSIXct(Sys.time()))
 library("tidyverse")
 library("recount")
 #load packages required to run 
-#argument should be file made from recount2 metadata (see README)
 args <- commandArgs(TRUE)
 #pass command line arguments to R
+#argument should be file made from recount2 metadata (see README)
 
 
 ### Make Directories If They Do Not Exist ###
