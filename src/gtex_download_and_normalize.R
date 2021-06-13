@@ -198,6 +198,6 @@ for(tis in tissues) {
 #filter for the samples (runs) we actualely want from each project (using project and desired tissue from that project)
 
 toc <- as.integer(as.POSIXct(Sys.time()))
-#numerical timestamp based on system tim
+#numerical timestamp based on system time
 print(paste("The time it took to run this script in minutes was", (toc-tic)/60, sep = " "))
 #print runtime
